@@ -1,0 +1,61 @@
+<html>
+
+<script>
+  window.onload = function() {
+var slide = document.getElementById('slide');
+var plot = document.getElementById('plot');
+var Title = document.getElementById('Title');
+var urls = ["https://plot.ly/~drkspace/123.embed", "https://plot.ly/~drkspace/125.embed", "https://plot.ly/~drkspace/127.embed", 
+            "https://plot.ly/~drkspace/129.embed", "https://plot.ly/~drkspace/131.embed", "https://plot.ly/~drkspace/133.embed",
+            "https://plot.ly/~drkspace/135.embed", "https://plot.ly/~drkspace/137.embed", "https://plot.ly/~drkspace/139.embed",
+            "https://plot.ly/~drkspace/141.embed", "https://plot.ly/~drkspace/143.embed", "https://plot.ly/~drkspace/145.embed",
+            "https://plot.ly/~drkspace/147.embed", "https://plot.ly/~drkspace/149.embed"]
+var periods = ["All Periods", "Geometric", "Orientalizing", "Archaic", "Hellenistic", "Early Classical",
+                "High Classical", "Late Classical", "Roman Republicain", "Roman Early Imperial", 
+                "Roman Late Imperial", "Early Christain", "Early Medieval", "Romanesque"];
+slide.max = urls.length-1;
+
+slide.oninput = function() {
+  plot.src = urls[this.value]; 
+  Title.innerHTML = periods[this.value];
+}
+}
+</script>
+<head>
+<style>
+body{
+
+text-align: center;
+
+}
+#slide{
+  width: 40%;
+}
+
+</style>
+<title>Artwork Location</title>
+</head>
+<body>
+<p id = "Title">All Periods</p>
+</br>
+
+<iframe id = 'plot' width="900" height="800" frameborder="0" scrolling="no" src="https://plot.ly/~drkspace/123.embed"></iframe>
+
+</br>
+
+<input id="slide" type="range" min="0" max="10" step="1" value="0">
+
+</br>
+
+
+</body>
+
+
+
+
+
+
+
+
+
+</html>
